@@ -10,8 +10,8 @@ import java.util.*;
  * It also supports reading and writing superhero-list.json file.
  */
 public class Main {
-    private static List<Superhero> superheroes = new ArrayList<>();
-    private static Scanner in = new Scanner(System.in);
+    private static final List<Superhero> superheroes = new ArrayList<>();
+    private static final Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
 	    fileReader();
@@ -20,35 +20,19 @@ public class Main {
             TextMenu.printMenu();
             int choice = in.nextInt();
             switch (choice) {
-                case 1:
-                    printHeroes();
-                    break;
-                case 2:
-                    addHero();
-                    break;
-                case 3:
-                    removeHero();
-                    break;
-                case 4:
-                    civilUpdate();
-                    break;
-                case 5:
-                    topThree();
-                    break;
-                case 6:
-                    debugDump();
-                    break;
-                case 7:
-                    isDone = true;
-                    break;
-                default:
-                    System.out.println("Invalid number, please retry.");
+                case 1 -> printHeroes();
+                case 2 -> addHero();
+                case 3 -> removeHero();
+                case 4 -> civilUpdate();
+                case 5 -> topThree();
+                case 6 -> debugDump();
+                case 7 -> isDone = true;
+                default -> System.out.println("Invalid number, please retry.");
             }
         }
 	    fileWriter();
     }
 
-    // Refer to Brain Fraser's Deserializing JSON: GSON and Java video
     private static void fileReader() {
         File input = new File("superhero-list.json");
         try {
@@ -71,7 +55,7 @@ public class Main {
                 Superhero superhero = new Superhero(name, superpower, height, civiliansSaved);
                 superheroes.add(superhero);
             }
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException ignored) {
         } catch (Exception e) {
             System.err.println("Error processing input file");
         }
@@ -224,14 +208,7 @@ public class Main {
         // Copy superheroes list to topThreeCivilianSaved to sort
         List<Superhero> topThreeCiviliansSaved = new ArrayList<>(superheroes);
 
-        // Sort topThreeCivilianSaved
-        // Refer to Lecture Notes: L03-AnonymousClasses-02.pdf Slide 16
-        Collections.sort(topThreeCiviliansSaved, new Comparator<Superhero>() {
-            @Override
-            public int compare (Superhero hero1, Superhero hero2) {
-                return hero2.getCiviliansSaved() - hero1.getCiviliansSaved();
-            }
-        });
+        topThreeCiviliansSaved.sort((hero1, hero2) -> hero2.getCiviliansSaved() - hero1.getCiviliansSaved());
 
         for (int i = 0; i < 3; i++) {
             System.out.println(i+1 + ". " +
