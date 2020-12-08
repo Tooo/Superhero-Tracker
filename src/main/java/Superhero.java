@@ -3,9 +3,9 @@
  * Data includes name, superpower, height, and number of civilians saved.
  */
 public class Superhero {
-    private String name;
-    private String superpower;
-    private double height;
+    private final String name;
+    private final String superpower;
+    private final double height;
     private int civiliansSaved;
 
     public Superhero (String name, String superpower, double height, int civiliansSaved) {

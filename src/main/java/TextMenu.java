@@ -4,8 +4,8 @@
  * It supports printing the menu and printing stars for the title.
  */
 public class TextMenu {
-    private static String menuTitle = " Super Hero Tracker ";
-    private static String[] menuOptions = {"List all superheros", "Add a new superhero",
+    private static final String menuTitle = " Super Hero Tracker ";
+    private static final String[] menuOptions = {"List all superheros", "Add a new superhero",
             "Remove a superhero", "Update number of civilians saved by a superhero",
             "List Top 3 superheroes", "Debug Dump (toString)", "Exit"};
 
