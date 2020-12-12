@@ -4,7 +4,7 @@ Superheroes will be saved when the program ends.
 Once the program is loaded back, the previous superheroes will be loaded.
 
 ## Installation
-1. Download, install and run [IntellJ Community Edition](https://www.jetbrains.com/idea/download/)
+1. Download, install and run [IntelliJ Community Edition](https://www.jetbrains.com/idea/download/)
 2. Click "Get from VCS" or File->New->Project From Version Control
 3. Insert the following URL:
 ```
