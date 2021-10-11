@@ -8,7 +8,7 @@ Once the program is loaded back, the previous superheroes will be loaded.
 2. Click "Get from VCS" or File->New->Project From Version Control
 3. Insert the following URL:
 ```
-https://github.com/Toooo123/Superhero-Tracker.git
+https://github.com/Tooo/Superhero-Tracker.git
 ```
 4. Run Main
 
